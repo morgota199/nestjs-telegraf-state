@@ -1,5 +1,3 @@
-import 'reflect-matadata';
-
 export * from './types';
 
 export { StateEntity } from './state-entity';

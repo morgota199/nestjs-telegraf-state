@@ -1,9 +1,10 @@
 import { ExecutionContext, Logger, createParamDecorator } from '@nestjs/common';
 import { TelegramSceneType } from './types/scene-type';
 import { StateOptions } from './types/state.options';
+import 'reflect-metadata';
 
 export const State = createParamDecorator(
-  <T>(entity: { new (...args: any[]): T }, ctx: ExecutionContext) => {
+  <T>(entity: { new(...args: any[]): T }, ctx: ExecutionContext) => {
     const request = ctx.switchToHttp().getRequest<TelegramSceneType>();
 
     const logger: Logger = new Logger(entity.name);
