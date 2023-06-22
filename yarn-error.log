@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn
+  /usr/local/bin/node /usr/local/bin/yarn publish
 
 PATH: 
   /snap/nvim/2809/usr/sbin:/snap/nvim/2809/usr/bin:/snap/nvim/2809/sbin:/snap/nvim/2809/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
@@ -14,25 +14,38 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/sirius/Documents/telemetrio/state/package.json: Unexpected string in JSON at position 244
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/-/user/org.couchdb.user:morgota199: Account creation via legacy auth is unavailable. Please set your auth-type to "web" or visit https://www.npmjs.com/signup to create an account.
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66154:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at Gunzip.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at Gunzip.emit (node:events:513:28)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
   {
     "name": "state",
-    "version": "1.0.0",
-    "main": "index.js",
+    "version": "1.0.1",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "license": "MIT",
     "scripts": {
       "build": "tsc",
       "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
     },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/morgota199/nestjs-telegraf-state.git"
+    },
+    "bugs": {
+      "url": "https://github.com/morgota199/nestjs-telegraf-state/issues"
+    },
+    "homehage": "https://github.com/morgota199/nestjs-telegraf-state#readme",
     "devDependencies": {
-      "typescript": "^5.1.3"
       "@nestjs/common": "^10.0.3",
       "@nestjs/core": "^10.0.3",
       "@types/node": "^20.3.1",
@@ -40,8 +53,12 @@ npm manifest:
       "prettier": "^2.8.8",
       "reflect-metadata": "^0.1.13",
       "rxjs": "^7.8.1",
-      "telegraf": "^4.12.2"
-    }
+      "telegraf": "^4.12.2",
+      "typescript": "^5.1.3"
+    },
+    "files": [
+      "lib/**/*"
+    ]
   }
 
 yarn manifest: 
