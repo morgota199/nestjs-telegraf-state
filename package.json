@@ -1,6 +1,6 @@
 {
   "name": "nestjs-telegraf-state",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "url": "https://github.com/morgota199/nestjs-telegraf-state/issues"
   },
   "homehage": "https://github.com/morgota199/nestjs-telegraf-state#readme",
+  "keywords": ["nestjs-telegraf", "telegraf", "telegram", "bot", "state"],
   "dependencies": {
     "reflect-metadata": "^0.1.13",
     "@nestjs/common": "^10.0.3",
