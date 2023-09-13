@@ -1,6 +1,6 @@
 {
   "name": "nestjs-telegraf-state",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",

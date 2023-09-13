@@ -7,6 +7,10 @@ export const State = createParamDecorator(
   <T>(entity: { new(...args: any[]): T }, ctx: ExecutionContext) => {
     const request = ctx.switchToHttp().getRequest<TelegramSceneType>();
 
+    if(!entity) {
+        throw Error("State: unregister state entity!!!")
+    }
+
     const logger: Logger = new Logger(entity.name);
     const options: StateOptions = Reflect.getMetadata(
       'options',
